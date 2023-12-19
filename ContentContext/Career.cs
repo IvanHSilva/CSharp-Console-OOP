@@ -2,6 +2,12 @@ namespace Oop.ContentContext
 {
     public class Career : Content
     {
-        public int Courses { get; set; }
+        public IList<CareerItem> Courses { get; set; }
+        public int TotalCourses => Courses.Count;
+
+        public Career()
+        {
+            Courses = new List<CareerItem>();
+        }
     }
 }
