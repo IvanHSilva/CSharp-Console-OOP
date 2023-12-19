@@ -6,9 +6,11 @@ namespace Oop.ContentContext
         public string Title { get; set; } = string.Empty;
         public string Url { get; set; } = string.Empty;
 
-        public Content()
+        public Content(string title, string url)
         {
             Id = Guid.NewGuid(); //SPOF - Single Point Of Fail
+            Title = title;
+            Url = url;
         }
     }
 }
