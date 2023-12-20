@@ -48,6 +48,12 @@ namespace Oop
                 {
                     Console.WriteLine($"{item.Order} - {item.Title}");
                     Console.WriteLine($"{item.Course.Title}");
+
+                    Console.WriteLine("Notificações:");
+                    foreach (var notification in item.Notifications)
+                    {
+                        Console.WriteLine($"{notification.Property} - {notification.Message}");
+                    }
                 }
             }
             Console.WriteLine();
