@@ -23,7 +23,7 @@ namespace Oop
             var courses = new List<Course>()!;
             courses.Add(new Course("Fundamentos OOP", "fundamentos-oop"));
             courses.Add(new Course("Fundamentos C#", "fundamentos-csharp"));
-            courses.Add(new Course("Fundamentos .NET", "fundamentos-net"));
+            courses.Add(new Course("Linguagem C#", "linguagem-csharp"));
             Console.WriteLine("Cursos: (Id / Titulo / URL)");
             foreach (var course in courses)
             {
@@ -33,11 +33,11 @@ namespace Oop
 
             var careers = new List<Career>()!;
             var career = new Career("Fundamentos C#", "fundamentos-csharp");
-            var careerItem = new CareerItem(1, "Início do Curso", "", null!);
+            var careerItem = new CareerItem(1, "Início do Curso", "", courses[0]);
             career.Courses.Add(careerItem);
-            careerItem = new CareerItem(2, "Fundamentos Básicos", "", null!);
+            careerItem = new CareerItem(2, "Fundamentos Básicos", "", courses[1]);
             career.Courses.Add(careerItem);
-            careerItem = new CareerItem(3, "Introdução ao C#", "", null!);
+            careerItem = new CareerItem(3, "Introdução ao C#", "", courses[2]);
             career.Courses.Add(careerItem);
             careers.Add(career);
             Console.WriteLine("Carreira: (Titulo / Cursos)");
@@ -47,6 +47,7 @@ namespace Oop
                 foreach (var item in career.Courses.OrderBy(c => c.Order))
                 {
                     Console.WriteLine($"{item.Order} - {item.Title}");
+                    Console.WriteLine($"{item.Course.Title}");
                 }
             }
             Console.WriteLine();
