@@ -27,7 +27,7 @@ namespace Oop
             Console.WriteLine("Cursos: (Id / Titulo / URL)");
             foreach (var course in courses)
             {
-                Console.WriteLine($"{course.Id} / {course.Title} / {course.Url}");
+                Console.WriteLine($"{course?.Id} / {course?.Title} / {course?.Url}");
             }
             Console.WriteLine();
 
@@ -47,7 +47,7 @@ namespace Oop
                 foreach (var item in career.Courses.OrderBy(c => c.Order))
                 {
                     Console.WriteLine($"{item.Order} - {item.Title}");
-                    Console.WriteLine($"{item.Course.Title}");
+                    Console.WriteLine($"{item.Course?.Title}");
 
                     Console.WriteLine("Notificações:");
                     foreach (var notification in item.Notifications)

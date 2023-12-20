@@ -1,4 +1,5 @@
 using Oop.NotificationContext;
+using Oop.SharedContext;
 
 namespace Oop.ContentContext
 {
@@ -7,7 +8,7 @@ namespace Oop.ContentContext
         public int Order { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public Course Course { get; set; } = null!;
+        public Course? Course { get; set; }
 
         public CareerItem(int order, string title, string description, Course course) : this()
         {
