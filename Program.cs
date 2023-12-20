@@ -1,4 +1,5 @@
 ﻿using Oop.ContentContext;
+using Oop.SubscriptionContext;
 
 namespace Oop
 {
@@ -56,6 +57,11 @@ namespace Oop
                     }
                 }
             }
+
+            var payPalSubscription = new PayPalSubscription();
+            var student = new Student();
+            student.CreateSubscription(payPalSubscription);
+
             Console.WriteLine();
         }
     }
